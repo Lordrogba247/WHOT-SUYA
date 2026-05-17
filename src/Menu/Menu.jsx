@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ReactDOM from "react-dom";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./Menu.css";
 
@@ -83,6 +84,11 @@ const platter = {
     img: foodImg,
 };
 
+const closeModal = (setContactOpen) => {
+    setContactOpen(false);
+    document.body.style.overflow = "";
+};
+
 export default function Menu({ cart, setCart }) {
     console.log("cart in menu:", cart);
     const [contactOpen, setContactOpen] = useState(false);
@@ -99,6 +105,11 @@ export default function Menu({ cart, setCart }) {
             setSearchTerm("");
         }
     }, [location.state]);
+
+    // Clean up body overflow on unmount
+    useEffect(() => {
+        return () => { document.body.style.overflow = ""; };
+    }, []);
 
     // Filter menu based on search term
     const filteredData = searchTerm
@@ -215,7 +226,10 @@ export default function Menu({ cart, setCart }) {
                         <p className="custom-order-text">
                             To make a custom order, kindly reach out to us by mail or Phone call
                         </p>
-                        <button className="btn-contact" onClick={() => setContactOpen(true)}>
+                        <button className="btn-contact" onClick={() => {
+                            setContactOpen(true);
+                            document.body.style.overflow = "hidden";
+                        }}>
                             CONTACT US
                         </button>
                     </div>
@@ -223,16 +237,16 @@ export default function Menu({ cart, setCart }) {
                 </div>
             </div>
 
-            {/* ── Contact Modal ── */}
-            {/* {contactOpen && (
-                <div className="modal-overlay" onClick={() => setContactOpen(false)}>
+            {/* ── Contact Modal — rendered via portal directly into document.body ── */}
+            {contactOpen && ReactDOM.createPortal(
+                <div className="modal-overlay" onClick={() => closeModal(setContactOpen)}>
                     <div className="modal" onClick={(e) => e.stopPropagation()}>
-                        <button className="modal-close" onClick={() => setContactOpen(false)}>✕</button>
+                        <button className="modal-close" onClick={() => closeModal(setContactOpen)}>✕</button>
                         <h3 className="modal-title">Contact Us</h3>
                         <p className="modal-sub">Reach out to place a custom order or ask any question</p>
                         <div className="modal-item">
                             <span className="modal-label">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="1.1em" viewBox="0 0 15 21">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24">
                                     <path d="M0 0h24v24H0z" fill="none" />
                                     <path fill="currentColor" d="M19.95 21q-3.125 0-6.175-1.362t-5.55-3.863t-3.862-5.55T3 4.05q0-.45.3-.75t.75-.3H8.1q.35 0 .625.238t.325.562l.65 3.5q.05.4-.025.675T9.4 8.45L6.975 10.9q.5.925 1.187 1.787t1.513 1.663q.775.775 1.625 1.438T13.1 17l2.35-2.35q.225-.225.588-.337t.712-.063l3.45.7q.35.1.575.363T21 15.9v4.05q0 .45-.3.75t-.75.3" />
                                 </svg>
@@ -242,7 +256,7 @@ export default function Menu({ cart, setCart }) {
                         </div>
                         <div className="modal-item">
                             <span className="modal-label">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="1.1em" viewBox="0 0 15 20">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24">
                                     <path d="M0 0h24v24H0z" fill="none" />
                                     <path fill="currentColor" d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2zm-2 0l-8 4.99L4 6zm0 12H4V8l8 5l8-5z" />
                                 </svg>
@@ -251,8 +265,9 @@ export default function Menu({ cart, setCart }) {
                             <a href="mailto:info@whotfoods.ca" className="modal-link">info@whotfoods.ca</a>
                         </div>
                     </div>
-                </div>
-            )} */}
+                </div>,
+                document.body
+            )}
 
         </div>
     );

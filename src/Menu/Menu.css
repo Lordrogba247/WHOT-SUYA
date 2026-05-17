@@ -17,6 +17,19 @@
   min-height: 100vh;
   padding-bottom: 60px;
 }
+.menu-page {
+  animation: fadeSlideIn 0.5s ease both;
+}
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 /* ── Header ── */
 .menu-header {
@@ -249,7 +262,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 300;
+  z-index: 9999;
   padding: 24px;
 }
 

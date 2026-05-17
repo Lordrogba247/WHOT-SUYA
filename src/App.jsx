@@ -22,9 +22,7 @@ function AnimatedRoutes({ cart, setCart }) {
       <Routes location={location}>
         <Route path="/" element={<Home setCart={setCart} />} />
         <Route path="/menu" element={
-          <div key={location.pathname} className="page-transition">
-            <Menu cart={cart} setCart={setCart} />
-          </div>
+          <Menu cart={cart} setCart={setCart} />
         } />
         <Route path="/cart" element={
           <div key={location.pathname} className="page-transition">
