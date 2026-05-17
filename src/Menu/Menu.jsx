@@ -224,7 +224,7 @@ export default function Menu({ cart, setCart }) {
             </div>
 
             {/* ── Contact Modal ── */}
-            {contactOpen && (
+            {/* {contactOpen && (
                 <div className="modal-overlay" onClick={() => setContactOpen(false)}>
                     <div className="modal" onClick={(e) => e.stopPropagation()}>
                         <button className="modal-close" onClick={() => setContactOpen(false)}>✕</button>
@@ -252,7 +252,7 @@ export default function Menu({ cart, setCart }) {
                         </div>
                     </div>
                 </div>
-            )}
+            )} */}
 
         </div>
     );
