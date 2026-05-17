@@ -84,6 +84,7 @@ body {
 }
 .show-3 {
   display: none;
+  width: 90%;
 }
 
 /* ── Hero image cluster ── */
