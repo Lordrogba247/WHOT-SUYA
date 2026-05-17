@@ -67,9 +67,7 @@ export default function Explore({ setCart }) {
                 ))}
             </div>
 
-            <button className="btn-orders" onClick={() => navigate("/menu")}>
-                Order Now ↗
-            </button>
+
 
             <a
                 className="explore-more"
