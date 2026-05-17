@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --orange: #f97316;
+  --black: #1a1a1a;
+  --white: #ffffff;
+  --gray: #555555;
+  --light-bg: #f9f9f9;
+  --font-main: "Poppins", sans-serif;
+}
+
+.terms {
+  background: var(--white);
+  font-family: var(--font-main);
+  min-height: 100vh;
+  padding: 60px 20px;
+}
+
+.terms-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Title */
+.terms-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--black);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Effective date */
+.terms-effective {
+  font-size: 0.85rem;
+  color: #437674;
+  font-weight: 500;
+  margin-bottom: 28px;
+}
+
+/* Body paragraphs */
+.terms-para {
+  font-size: 0.88rem;
+  color: var(--black);
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+
+/* Section headings */
+.terms-section-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-top: 28px;
+  margin-bottom: 8px;
+}
+
+/* Bullet lists */
+.terms-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 14px;
+}
+
+.terms-list li {
+  font-size: 0.88rem;
+  color: var(--black);
+  line-height: 1.8;
+  padding-left: 16px;
+  position: relative;
+}
+
+.terms-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--gray);
+}
+
+/* Clickable links */
+.terms-link {
+  color: var(--orange);
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.terms-link:hover {
+  opacity: 0.75;
+  text-decoration: underline;
+}
+
+/* ══════════════════════════════
+   RESPONSIVE
+══════════════════════════════ */
+@media (max-width: 768px) {
+  .terms {
+    padding: 40px 20px;
+  }
+
+  .terms-title {
+    font-size: 1.6rem;
+  }
+}

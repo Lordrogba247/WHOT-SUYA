@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --orange: #f97316;
+  --black: #1a1a1a;
+  --white: #ffffff;
+  --gray: #555555;
+  --font-main: "Poppins", sans-serif;
+}
+
+.policy {
+  background: var(--white);
+  font-family: var(--font-main);
+  min-height: 100vh;
+  padding: 60px 20px;
+}
+
+.policy-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Title */
+.policy-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--black);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Effective date */
+.policy-effective {
+  font-size: 0.85rem;
+  color: #437674;
+  font-weight: 500;
+  margin-bottom: 28px;
+}
+
+/* Body paragraphs */
+.policy-para {
+  font-size: 0.88rem;
+  color: black;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+/* Section headings e.g. "1. Company Information" */
+.policy-section-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-top: 28px;
+  margin-bottom: 8px;
+}
+
+/* Sub headings e.g. "Personal Information", "Payment Information" */
+.policy-sub-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-top: 12px;
+  margin-bottom: 4px;
+}
+
+/* Bullet lists */
+.policy-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 12px;
+}
+
+.policy-list li {
+  font-size: 0.88rem;
+  color: black;
+  line-height: 1.8;
+  padding-left: 16px;
+  position: relative;
+}
+
+.policy-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--gray);
+}
+
+/* Clickable links */
+.policy-link {
+  color: var(--orange);
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.policy-link:hover {
+  opacity: 0.75;
+  text-decoration: underline;
+}
+
+/* ══════════════════════════════
+   RESPONSIVE
+══════════════════════════════ */
+@media (max-width: 768px) {
+  .policy {
+    padding: 40px 20px;
+  }
+
+  .policy-title {
+    font-size: 1.6rem;
+  }
+}

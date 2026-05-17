@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --orange: #ee9d25;
+  --black: #1a1a1a;
+  --white: #ffffff;
+  --gray: #666666;
+  --light-bg: #fafafa;
+  --font-main: "Poppins", sans-serif;
+}
+
+.contact {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 60px 80px 60px 80px;
+  background: var(--white);
+  font-family: var(--font-main);
+  border-bottom: 1px solid #eee;
+  gap: 40px;
+}
+
+.contact-left {
+  flex: 1;
+  max-width: 380px;
+}
+
+.contact-heading {
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--black);
+}
+
+.contact-orange {
+  color: #ee9d25;
+}
+
+/* Right side */
+.contact-right {
+  flex: 1;
+  max-width: 480px;
+  padding-top: 4px;
+}
+
+.contact-section-tag {
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: black;
+  letter-spacing: 1px;
+  margin-top: 60px;
+  margin-bottom: -20px;
+}
+
+.contact-block {
+  margin-bottom: 20px;
+}
+
+.contact-block-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ee9d25;
+  margin-bottom: 6px;
+}
+
+.contact-block-text {
+  font-size: 0.88rem;
+  color: var(--black);
+  line-height: 1.7;
+  text-decoration: none;
+}
+
+.contact-row {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+/* Social icons */
+.contact-socials {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.social-img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.social-img:hover {
+  transform: scale(1.1);
+}
+
+.tiktok {
+  border-radius: 0;
+  width: 32px;
+  height: 32px;
+}
+
+/* ══════════════════════════════
+   RESPONSIVE
+══════════════════════════════ */
+@media (max-width: 900px) {
+  .contact-section-tag {
+    font-size: 1rem;
+  }
+  .contact {
+    flex-direction: column;
+    padding: 48px 24px;
+  }
+
+  .contact-heading {
+    font-size: 2.5rem;
+    text-align: center;
+    /* max-width: 280px; */
+  }
+
+  .contact-row {
+    gap: 32px;
+  }
+  .contact-block {
+    text-align: center;
+  }
+  .contact-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
