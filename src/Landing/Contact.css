@@ -126,6 +126,8 @@
   }
   .contact-block {
     text-align: center;
+    display: flex;
+    flex-direction: column;
   }
   .contact-row {
     display: flex;
