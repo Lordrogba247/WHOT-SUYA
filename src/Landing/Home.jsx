@@ -1,16 +1,16 @@
 import React from "react";
 import Landing from "./Landing";
-import Explore from "./Explore";
-import Use from "./Use";
-import Contact from "./Contact";
+import About from "./About";
+import Serving from "./Serving";
+import Order from "./Order";
 
-export default function Home({ setCart }) {
+export default function Home() {
     return (
         <div>
             <Landing />
-            <Explore setCart={setCart} />  {/* pass it here */}
-            <Use />
-            <Contact />
+            <About />
+            <Serving />
+            <Order />
         </div>
     );
 }

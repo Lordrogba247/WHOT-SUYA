@@ -1,197 +1,326 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Bebas+Neue&display=swap");
 
 :root {
-  --orange: #ee9d25;
-  --orange-dark: #ee9d25;
-  --black: #1a1a1a;
+  --red: #cc1111;
+  --red-dark: #a50e0e;
+  --black: #000000;
   --white: #ffffff;
   --gray: #666666;
   --light-bg: #f0f0f0;
-  --card-bg: #f4f7fc;
   --font-main: "Poppins", sans-serif;
+  --font-price: "Bebas Neue", sans-serif;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: var(--font-main);
-  color: var(--black);
-  background: var(--card-bg);
-}
-
-/* ══════════════════════════════
-   HERO
-══════════════════════════════ */
-.hero {
+.landing {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 60px 60px 40px;
-  background: var(--card-bg);
-  min-height: 520px;
-  gap: 20px;
+  padding: 48px 80px;
+  background: var(--light-bg);
+  min-height: 90vh;
+  overflow: hidden;
+  font-family: var(--font-main);
 }
 
-.hero-left {
+/* ── Left ── */
+.landing-left {
   flex: 1;
-  max-width: 480px;
+  max-width: 440px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
 }
 
-.hero-text-img {
-  width: 100%;
-  max-width: 440px;
+.landing-logo {
+  width: 100px;
+  height: auto;
+  margin-bottom: 8px;
+}
+
+.landing-title {
+  font-family: var(--font-main);
+  font-size: 5.2rem;
+  font-weight: 700;
+  line-height: 0.95;
+  color: var(--black);
+  letter-spacing: -2px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.landing-suya-img {
+  width: 300px;
   height: auto;
   display: block;
+  margin-top: -70px;
+  margin-left: -40px;
 }
 
-.hero-sub {
-  margin-top: 18px;
+.landing-desc {
+  margin-top: -10px;
   font-size: 0.88rem;
   color: #437674;
   line-height: 1.75;
-  max-width: 380px;
+  max-width: 340px;
+  font-weight: 400;
 }
 
-.btn-order {
-  margin-top: 28px;
-  background: #ee9d25;
+.btn-order-now {
+  margin-top: 24px;
+  background: var(--red);
   color: var(--white);
   border: none;
-  padding: 12px 28px;
-  border-radius: 25px;
-  font-size: 0.92rem;
+  padding: 13px 28px;
+  border-radius: 30px;
+  font-size: 0.95rem;
   font-weight: 600;
   font-family: var(--font-main);
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  width: fit-content;
   transition:
     background 0.2s,
     transform 0.15s;
 }
 
-.btn-order:hover {
-  background: var(--orange-dark);
+.btn-order-now:hover {
+  background: var(--red-dark);
   transform: translateY(-1px);
 }
-.show-1 {
+
+/* Hidden on desktop, shown on mobile */
+.landing-bottom-row-mobile {
   display: none;
-}
-.show-3 {
-  display: none;
-  width: 90%;
 }
 
-/* ── Hero image cluster ── */
-.hero-right {
+/* ── Right ── */
+.landing-right {
   flex: 1;
   position: relative;
-  height: 460px;
-  max-width: 540px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.hero-img {
+/* Mobile duplicate — hidden on desktop */
+.landing-right--mobile {
+  display: none;
+}
+
+/* Desktop original — shown on desktop */
+.landing-right--desktop {
+  display: flex;
+}
+
+.landing-pepper {
   position: absolute;
-  object-fit: cover;
+  z-index: 2;
 }
 
-/* main food bowl – center */
-.hero-img--2 {
-  width: 420px;
-  height: 420px;
-  top: 0;
-  right: 0;
+.landing-pepper--1 {
+  width: 100px;
+  bottom: 30px;
+  left: 200px;
+}
+
+.landing-pepper--2 {
+  width: 60px;
+  top: 40px;
+  right: 0px;
+  transform: rotate(15deg) scaleX(-1);
+  animation: floatP2 6s ease-in-out infinite;
+}
+
+@keyframes floatP1 {
+  0%,
+  100% {
+    transform: rotate(-20deg) translateY(0);
+  }
+  50% {
+    transform: rotate(-20deg) translateY(-10px);
+  }
+}
+
+@keyframes floatP2 {
+  0%,
+  100% {
+    transform: rotate(15deg) scaleX(-1) translateY(0);
+  }
+  50% {
+    transform: rotate(15deg) scaleX(-1) translateY(-8px);
+  }
+}
+
+.landing-box-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  z-index: 2;
+}
+
+.landing-box {
+  width: 520px;
+  height: auto;
   object-fit: contain;
-  z-index: 1;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+  animation: floatBox 4s ease-in-out infinite;
 }
 
-/* chili pepper – bottom left */
-.hero-img--1 {
-  width: 90px;
-  height: auto;
-  bottom: -10px;
-  left: 100px;
-  z-index: 2;
+@keyframes floatBox {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
 }
 
-/* squiggle – bottom right area */
-.hero-img--4 {
-  width: 65px;
-  height: auto;
-  bottom: 60px;
-  right: 20px;
-  z-index: 2;
-}
-
-/* badge card – bottom right */
-.hero-img--3 {
+.landing-badge-card {
+  position: absolute;
+  bottom: 85px;
+  right: -10px;
   width: 160px;
   height: auto;
-  bottom: 0px;
-  right: 30px;
+  z-index: 4;
   border-radius: 12px;
-  z-index: 1;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
 }
 
-/* ══════════════════════════════
-   RESPONSIVE
-══════════════════════════════ */
+.landing-bottom-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-top: 28px;
+  padding-left: 200px;
+}
+
+.landing-price {
+  display: flex;
+  align-items: flex-start;
+  gap: 3px;
+}
+
+.landing-price-num {
+  font-family: var(--font-price);
+  font-size: 4.5rem;
+  color: var(--black);
+  line-height: 1;
+}
+
+.landing-price-cur {
+  font-family: var(--font-price);
+  font-size: 0.75rem;
+  color: var(--black);
+  align-self: flex-start;
+  margin-top: 6px;
+  line-height: 1;
+}
+
+.landing-badges {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.landing-badge {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+}
+
+/* ══ RESPONSIVE ══ */
 @media (max-width: 900px) {
-  .navbar {
-    padding: 14px 24px;
-  }
-
-  .hero {
+  .landing {
     flex-direction: column;
-    padding: 40px 24px;
+    padding: 24px 24px 40px;
+    min-height: auto;
     text-align: center;
+    align-items: center;
+    gap: 0;
+    overflow: visible;
   }
 
-  /* .hero-sub {
-    margin: 14px auto 0;
-  } */
-
-  .hero-right {
-    top: -30px;
+  /* Show mobile box, hide desktop box */
+  .landing-right--mobile {
+    display: flex;
     width: 100%;
-    height: 340px;
+    justify-content: center;
+    margin-bottom: 8px;
   }
 
-  .hero-img--2 {
-    width: 300px;
-    height: 300px;
-    left: 50%;
-    transform: translateX(-50%);
-    right: auto;
-  }
-  .hero-img--1 {
-    top: 270px;
-    left: 20px;
-  }
-
-  .hero-img--3 {
-    top: 270px;
-    width: 120px;
-    right: 40px;
-  }
-
-  .hero-img--4 {
-    top: 245px;
-  }
-  .show-1 {
-    display: block;
-    margin-top: 100%;
-  }
-  .show-2 {
+  .landing-right--desktop {
     display: none;
   }
-  .show-3 {
-    display: block;
+
+  /* Mobile box: small, tilted */
+  .landing-right--mobile .landing-box-wrap {
+    align-items: center;
+    width: 100%;
+  }
+
+  .landing-right--mobile .landing-box {
+    width: 75%;
+    max-width: 240px;
+    animation: none;
+    transform: rotate(-8deg);
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.18));
+  }
+
+  .landing-right--mobile .landing-badge-card {
+    width: 110px;
+    bottom: 10px;
+    right: calc(50% - 160px);
+  }
+
+  /* Left text */
+  .landing-left {
+    max-width: 100%;
+    align-items: center;
+    width: 100%;
+  }
+
+  .landing-logo {
+    width: 72px;
+    margin-bottom: 4px;
+  }
+
+  .landing-title {
+    font-size: 4rem;
+    letter-spacing: -1px;
+  }
+
+  .landing-suya-img {
+    width: 210px;
+    margin-top: -48px;
+    margin-left: 0;
+  }
+
+  .landing-desc {
+    margin-inline: auto;
+    font-size: 0.85rem;
+    margin-top: 6px;
+    max-width: 280px;
+  }
+
+  .btn-order-now {
+    margin-top: 20px;
+    width: 100%;
+    justify-content: center;
+    padding: 14px 0;
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+
+  /* Mobile price row — below the button */
+  .landing-bottom-row-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding-top: 20px;
+    width: 100%;
   }
 }

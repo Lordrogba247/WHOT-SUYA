@@ -1,58 +1,81 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import "./Landing.css";
+import logoImg from "../assets/logo.png";
+import boxImg from "../assets/box.png";
+import suyaText from "../assets/suya.png";
+import badgeCard from "../assets/text-bottom.png";
+import logo1 from "../assets/logo1.png";
+import logo2 from "../assets/logo2.png";
+import pepperImg from "../assets/pepper.png";
 
-import IMG1 from "../assets/pepper.png";
-import IMG2 from "../assets/hero-img.png";
-import IMG3 from "../assets/text-bottom.png";
-import IMG4 from "../assets/pepper-two.png";
-import textImg from "../assets/text.png";
-
-export default function Landing() {
-    const navigate = useNavigate();
+const Landing = () => {
+    const scrollTo = (id) => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    };
 
     return (
-        <div className="landing">
+        <section className="landing">
 
-            {/* ── NAVBAR ── */}
+            {/* ── MOBILE ONLY: Box on top ── */}
+            <div className="landing-right landing-right--mobile">
+                <div className="landing-box-wrap">
+                    <img src={boxImg} alt="Beef Suya Box" className="landing-box" />
+                    <img src={badgeCard} alt="Best African Taste" className="landing-badge-card" />
+                </div>
+            </div>
 
-
-            {/* ── HERO ── */}
-            <section className="hero">
-                <div className="hero-left">
-                    <img
-                        src={textImg}
-                        alt="Your Favorite Meals, Delivered To Your Door"
-                        className="hero-text-img"
-                    />
-                    <p className="hero-sub show-2">
-                        Satisfy your cravings in minutes. From local delicacies
-                        to international flavors. We've got you covered.
-                    </p>
-                    <button className="btn-order show-2" onClick={() => navigate("/menu")}>Order Now <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="2em" viewBox="0 0 24 24">
+            {/* ── Left (always visible) ── */}
+            <div className="landing-left">
+                <img src={logoImg} alt="Whot Foods" className="landing-logo" />
+                <h1 className="landing-title">BEEF</h1>
+                <img src={suyaText} alt="Suya" className="landing-suya-img" />
+                <p className="landing-desc">
+                    Craving premium suya? Taste the bold flavour of WHOT Foods Beef Suya!
+                    Just Thaw, Microwave and Enjoy!
+                </p>
+                <button className="btn-order-now" onClick={() => scrollTo("order")}>
+                    Order Now <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="2em" viewBox="0 0 24 24">
                         <path d="M0 0h24v24H0z" fill="none" />
                         <path fill="currentColor" d="M5 17.59L15.59 7H9V5h10v10h-2V8.41L6.41 19z" />
                     </svg>
-                    </button>
+                </button>
+
+                {/* Mobile-only price row */}
+                <div className="landing-bottom-row-mobile">
+                    <div className="landing-price">
+                        <span className="landing-price-num">15</span>
+                        <span className="landing-price-cur">CAD$</span>
+                    </div>
+                    <div className="landing-badges">
+                        <img src={logo1} alt="badge" className="landing-badge" />
+                        <img src={logo2} alt="badge" className="landing-badge" />
+                    </div>
                 </div>
+            </div>
 
-                <div className="hero-right">
-                    <img src={IMG2} alt="main food" className="hero-img hero-img--2" />
-                    <img src={IMG1} alt="pepper" className="hero-img hero-img--1" />
-                    <img src={IMG4} alt="decoration" className="hero-img hero-img--4" />
-                    <img src={IMG3} alt="badge" className="hero-img hero-img--3" />
+            {/* ── DESKTOP ONLY: Box on right ── */}
+            <div className="landing-right landing-right--desktop">
+                <img src={pepperImg} alt="" className="landing-pepper landing-pepper--1" aria-hidden="true" />
+
+                <div className="landing-box-wrap">
+                    <img src={boxImg} alt="Beef Suya Box" className="landing-box" />
+                    <img src={badgeCard} alt="Best African Taste" className="landing-badge-card" />
+
+                    <div className="landing-bottom-row">
+                        <div className="landing-price">
+                            <span className="landing-price-num">15</span>
+                            <span className="landing-price-cur">CAD$</span>
+                        </div>
+                        <div className="landing-badges">
+                            <img src={logo1} alt="badge" className="landing-badge" />
+                            <img src={logo2} alt="badge" className="landing-badge" />
+                        </div>
+                    </div>
                 </div>
-                <p className="hero-sub show-1">
-                    Satisfy your cravings in minutes. From local delicacies
-                    to international flavors. We've got you covered.
-                </p>
-                <button className="btn-order show-3" onClick={() => navigate("/menu")}>Order Now <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20">
-                    <path d="M0 0h24v24H0z" fill="none" />
-                    <path fill="currentColor" d="M5 17.59L15.59 7H9V5h10v10h-2V8.41L6.41 19z" />
-                </svg></button>
+            </div>
 
-            </section>
-
-        </div>
+        </section>
     );
-}
+};
+
+export default Landing;

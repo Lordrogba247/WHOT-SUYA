@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap");
+
+:root {
+  --red: #cc1111;
+  --white: #ffffff;
+  --font-main: "Poppins", sans-serif;
+  --font-display: "Poppins", sans-serif;
+}
+
+.serving {
+  position: relative;
+  padding: 80px 72px;
+  background-size: contain;
+  background-position: center;
+  text-align: center;
+  font-family: var(--font-main);
+}
+
+.serving-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(180, 10, 10, 0.82);
+}
+
+.serving-label {
+  position: relative;
+  z-index: 2;
+  font-size: 0.9rem;
+  color: rgb(255, 255, 255);
+  letter-spacing: 2px;
+  font-weight: 400;
+  margin-bottom: 48px;
+  margin-top: -30px;
+}
+
+.serving-steps {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.serving-step {
+  width: 260px;
+  text-align: left;
+  color: var(--white);
+}
+
+.step-num {
+  width: 44px;
+  height: 44px;
+  background: #ee9d25;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: var(--white);
+}
+
+.step-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.step-desc {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  font-weight: 300;
+  color: rgb(255, 255, 255);
+  max-width: 150px;
+}
+
+/* ══ RESPONSIVE ══ */
+@media (max-width: 900px) {
+  .serving {
+    margin-top: 20px;
+    padding: 60px 32px;
+  }
+  .serving-label {
+    font-size: 1rem;
+    margin-bottom: 32px;
+  }
+
+  .serving-steps {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .serving-step {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .step-num {
+    margin-bottom: 12px;
+  }
+
+  .step-desc {
+    max-width: 61%;
+    font-size: larger;
+  }
+}

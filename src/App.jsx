@@ -1,51 +1,44 @@
-import { useState, useEffect } from 'react'
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
-import Navbar from './Navbar/Navbar'
-import Home from './Landing/Home'
-import Menu from './Menu/Menu'
-import Cart from './Cart/Cart'
-import Policy from './Policy/Policy'
-import Terms from './Terms/Terms'
-import Footer from './Footer/Footer'
+import React from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import Navbar from "./Navbar/Navbar";
+import Home from "./Landing/Home";
+import Contact from "./Contact/Contact";
+import Footer from "./Footer/Footer";
+import Terms from "./Terms/Terms";
+import Policy from "./Policy/Policy";
+import "./App.css";
 
-import './App.css'
-
-function AnimatedRoutes({ cart, setCart }) {
-  const location = useLocation();
-
+function ScrollToTop() {
+  const { pathname } = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [location.pathname]);
+  }, [pathname]);
+  return null;
+}
 
+function Layout() {
   return (
-    <div>
-      <Routes location={location}>
-        <Route path="/" element={<Home setCart={setCart} />} />
-        <Route path="/menu" element={
-          <Menu cart={cart} setCart={setCart} />
-        } />
-        <Route path="/cart" element={
-          <div key={location.pathname} className="page-transition">
-            <Cart cart={cart} setCart={setCart} />
-          </div>
-        } />
-        <Route path="/policy" element={<div key={location.pathname} className="page-transition"><Policy /></div>} />
-        <Route path="/terms" element={<div key={location.pathname} className="page-transition"><Terms /></div>} />
-      </Routes>
-    </div>
-  )
+    <>
+      <Navbar />
+      <Home />
+      <Contact />
+      <Footer />
+    </>
+  );
 }
 
 function App() {
-  const [cart, setCart] = useState([])
-
   return (
     <BrowserRouter>
-      <Navbar cart={cart} />
-      <AnimatedRoutes cart={cart} setCart={setCart} />
-      <Footer />
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Layout />} />
+        <Route path="/terms" element={<><Navbar /><Terms /><Footer /></>} />
+        <Route path="/policy" element={<><Navbar /><Policy /><Footer /></>} />
+      </Routes>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;
