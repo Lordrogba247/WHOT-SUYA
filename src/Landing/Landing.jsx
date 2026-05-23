@@ -2,7 +2,7 @@ import React from "react";
 import "./Landing.css";
 import logoImg from "../assets/logo.png";
 import boxImg from "../assets/box.png";
-import suyaText from "../assets/suya.png";
+import suyaText from "../assets/Suya.png";
 import badgeCard from "../assets/text-bottom.png";
 import logo1 from "../assets/logo1.png";
 import logo2 from "../assets/logo2.png";
