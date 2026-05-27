@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Navbar from "./Navbar/Navbar";
 import Home from "./Landing/Home";
-import Contact from "./Contact/Contact";
+// import Contact from "./Contact/Contact";
 import Footer from "./Footer/Footer";
 import Terms from "./Terms/Terms";
 import Policy from "./Policy/Policy";
@@ -24,7 +24,7 @@ function Layout() {
       <Navbar />
       <Home />
       <Contact2 />
-      <Contact />
+      {/* <Contact /> */}
       <Footer />
     </>
   );
