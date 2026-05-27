@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+.contact-section {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 5rem 2rem;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+/* Reservation Form */
+.reservation-form-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+
+.reservation-header {
+  padding-right: 2rem;
+}
+
+.reservation-subtitle {
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  color: #cd2827;
+  font-family: "Poppins", sans-serif;
+}
+
+.reservation-title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.6;
+  font-family: "Poppins", sans-serif;
+  color: #000000;
+  max-width: 270px;
+}
+
+.reservation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #000000;
+  font-family: "Poppins", sans-serif;
+}
+
+.form-group input,
+.form-group textarea {
+  background-color: transparent;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-family: "Poppins", sans-serif;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #000000;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.reserve-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  background-color: #cd2827;
+  color: #ffffff;
+  border: none;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: fit-content;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+}
+
+.reserve-btn:hover {
+  background: #a50e0e;
+  transform: translateY(-1px);
+}
+
+.reserve-arrow {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.reserve-btn:hover .reserve-arrow {
+  transform: translateX(5px);
+}
+
+/* Open Days Section */
+.open-days-section {
+  text-align: center;
+}
+
+.open-days-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: #d4af37;
+  font-family: "Poppins", sans-serif;
+}
+
+.open-days-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.day-card {
+  border: 1px solid #ffffff;
+  border-radius: 2px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+}
+
+.day-card:hover {
+  border-color: #d4af37;
+  transform: translateY(-5px);
+}
+
+.day-name {
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.day-time {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #d4af37;
+  font-family: "Poppins", sans-serif;
+  text-align: left;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .reservation-form-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .reservation-header {
+    padding-right: 0;
+  }
+}
+/* Add at the end of Contact.css */
+
+.submit-message {
+  padding: 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.submit-message.success {
+  background-color: rgba(76, 175, 80, 0.2);
+  border: 1px solid #4caf50;
+  color: #4caf50;
+}
+
+.submit-message.error {
+  background-color: rgba(244, 67, 54, 0.2);
+  border: 1px solid #f44336;
+  color: #f44336;
+}
+
+.submit-message.sending {
+  background-color: rgba(212, 175, 55, 0.2);
+  border: 1px solid #d4af37;
+  color: #d4af37;
+}
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .open-days-cards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .reservation-title {
+    font-size: 1.3rem;
+  }
+
+  .open-days-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-container {
+    margin-top: 50px;
+  }
+  .contact-section {
+    padding: 2.5rem 1rem;
+  }
+  .reservation-subtitle {
+    font-size: 1.3rem;
+  }
+  .reservation-title {
+    font-size: 1.2rem;
+  }
+
+  .open-days-title {
+    font-size: 1.6rem;
+  }
+
+  .reserve-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -7,6 +7,7 @@ import Contact from "./Contact/Contact";
 import Footer from "./Footer/Footer";
 import Terms from "./Terms/Terms";
 import Policy from "./Policy/Policy";
+import Contact2 from "./Contact2/Contact2"
 import "./App.css";
 
 function ScrollToTop() {
@@ -22,6 +23,7 @@ function Layout() {
     <>
       <Navbar />
       <Home />
+      <Contact2 />
       <Contact />
       <Footer />
     </>

@@ -58,7 +58,7 @@
   color: var(--white);
   border: none;
   padding: 10px 24px;
-  border-radius: 20px;
+  border-radius: 30px;
   font-size: 0.9rem;
   font-weight: 600;
   font-family: var(--font-main);
@@ -66,6 +66,10 @@
   transition:
     background 0.2s,
     transform 0.15s;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
 }
 
 .btn-order-now1:hover {
