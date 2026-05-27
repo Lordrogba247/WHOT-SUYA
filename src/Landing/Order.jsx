@@ -44,7 +44,7 @@ const Order = () => {
         };
 
         try {
-            const response = await fetch("https://whotfood-backend.vercel.app/v2/online-checkout/payment-links", {
+            const response = await fetch("https://whotfood-backend.vercel.app/api/orders", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
