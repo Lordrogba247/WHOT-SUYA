@@ -1,8 +1,4 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import "./OrderSuccess.css";
-
-import React from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import "./OrderSuccess.css";
 
@@ -13,7 +9,6 @@ const OrderSuccess = () => {
     const isSuccess = searchParams.get("success") === "true";
     const isCanceled = searchParams.get("canceled") === "true";
 
-    // Default to success view if no params (direct visit)
     const showFailure = isCanceled || (!isSuccess && !isCanceled ? false : !isSuccess);
 
     return (
