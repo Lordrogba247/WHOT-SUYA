@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./Navbar.css";
 import logoImg from "../assets/logo.png";
@@ -8,18 +8,26 @@ const Navbar = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
+    // After navigating home, pick up any pending scroll target
+    useEffect(() => {
+        if (location.pathname === "/") {
+            const pending = sessionStorage.getItem("scrollTo");
+            if (pending) {
+                sessionStorage.removeItem("scrollTo");
+                setTimeout(() => {
+                    document.getElementById(pending)?.scrollIntoView({ behavior: "smooth" });
+                }, 100);
+            }
+        }
+    }, [location.pathname]);
+
     const scrollTo = (id) => {
         setMenuOpen(false);
-
         if (location.pathname === "/") {
-            // Already on home — just scroll
             document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
         } else {
-            // On another page — go home first, then scroll after page loads
+            sessionStorage.setItem("scrollTo", id); // store target, then navigate
             navigate("/");
-            setTimeout(() => {
-                document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-            }, 100);
         }
     };
 
@@ -42,11 +50,6 @@ const Navbar = () => {
                 <li><button onClick={() => scrollTo("about")}>About</button></li>
                 <li><button onClick={() => scrollTo("serving")}>Serving</button></li>
                 <li><button onClick={() => scrollTo("contact")}>Contact</button></li>
-                <li className="nav-links-order">
-                    {/* <button className="btn-order-now-mobile" onClick={() => scrollTo("order")}>
-                        Order Now ↗
-                    </button> */}
-                </li>
             </ul>
 
             <div className="nav-right">
@@ -61,9 +64,7 @@ const Navbar = () => {
                     onClick={() => setMenuOpen((prev) => !prev)}
                     aria-label="Toggle menu"
                 >
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <span></span><span></span><span></span>
                 </button>
             </div>
 

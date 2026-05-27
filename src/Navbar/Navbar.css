@@ -121,7 +121,7 @@
 @media (max-width: 768px) {
   .navbar {
     padding: 16px 20px;
-    position: relative;
+    position: sticky;
   }
 
   /* Hide desktop links and Order Now button */

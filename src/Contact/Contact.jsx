@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './Contact2.css';
+import './Contact.css';
 
-const Contact2 = () => {
+const Contact = () => {
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
@@ -203,4 +203,4 @@ const Contact2 = () => {
     );
 };
 
-export default Contact2;
+export default Contact;
