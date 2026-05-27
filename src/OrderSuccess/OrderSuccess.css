@@ -242,6 +242,17 @@
   transform: translateY(-1px);
 }
 
+.failure-icon {
+  background: #888888;
+}
+
+.success-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 @media (max-width: 560px) {
   .success-card {
     padding: 40px 24px;
