@@ -44,7 +44,7 @@ const Order = () => {
         };
 
         try {
-            const response = await fetch("https://connect.spuareup.com/v2/online-checkout/payment-links", {
+            const response = await fetch("https://whot-suya.vercel.app/v2/online-checkout/payment-links", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -53,7 +53,9 @@ const Order = () => {
             });
 
             if (response.ok) {
-                alert("Order placed! Our team will reach out shortly.");
+                const data = await response.json();
+                window.location.href = data.url;
+                // alert("Order placed! Our team will reach out shortly.");
                 // Reset form after successful order
                 setQty(1);
                 setForm({ fullName: "", email: "", phone: "", address: "" });
