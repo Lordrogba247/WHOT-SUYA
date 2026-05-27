@@ -61,7 +61,7 @@ const Order = () => {
             }
         } catch (error) {
             console.error("Checkout error:", error);
-            alert("Unable to place order. Please check your connection and try again.");
+            alert("Our ordering system is temporarily unavailable. Please contact us directly at +1 905-266-0331 or whotfoodsinc@gmail.com to place your order.");
         }
     };
 
