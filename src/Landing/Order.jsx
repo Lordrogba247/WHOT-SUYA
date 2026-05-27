@@ -22,9 +22,47 @@ const Order = () => {
         setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
     };
 
-    const handleCheckout = () => {
-        console.log("Order:", { qty, form, total });
-        alert("Order placed! Our team will reach out shortly.");
+    const handleCheckout = async () => {
+        // Basic validation
+        if (!form.fullName || !form.email || !form.phone || !form.address) {
+            alert("Please fill in all fields before checking out.");
+            return;
+        }
+
+        const orderData = {
+            quantity: qty,
+            unitPrice: unitPrice,
+            deliveryFee: DELIVERY_FEE,
+            total: total,
+            customer: {
+                fullName: form.fullName,
+                email: form.email,
+                phone: form.phone,
+                address: form.address,
+            },
+        };
+
+        try {
+            const response = await fetch("https://www.whotfoods.ca/api/orders", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(orderData),
+            });
+
+            if (response.ok) {
+                alert("Order placed! Our team will reach out shortly.");
+                // Reset form after successful order
+                setQty(1);
+                setForm({ fullName: "", email: "", phone: "", address: "" });
+            } else {
+                alert("Something went wrong. Please try again or contact us directly.");
+            }
+        } catch (error) {
+            console.error("Checkout error:", error);
+            alert("Unable to place order. Please check your connection and try again.");
+        }
     };
 
     return (
