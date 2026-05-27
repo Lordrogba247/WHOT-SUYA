@@ -70,3 +70,26 @@
 // };
 
 // export default Contact;
+
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import "./OrderSuccess.css";
+
+const OrderSuccess = () => {
+    const navigate = useNavigate();
+
+    return (
+        <div className="success-page">
+            <div className="success-card">
+                <div className="success-icon">✓</div>
+                <h1 className="success-title">Thank you for placing an order.</h1>
+                <p className="success-sub">Our team will reach out to you shortly to confirm your order details.</p>
+                <button className="success-btn" onClick={() => navigate("/")}>
+                    Click here to return to homepage
+                </button>
+            </div>
+        </div>
+    );
+};
+
+export default OrderSuccess;

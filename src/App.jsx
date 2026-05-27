@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Navbar from "./Navbar/Navbar";
 import Home from "./Landing/Home";
-// import Contact from "./Contact/Contact";
+import OrderSuccess from "./OrderSuccess/OrderSuccess";
 import Footer from "./Footer/Footer";
 import Terms from "./Terms/Terms";
 import Policy from "./Policy/Policy";
@@ -38,6 +38,7 @@ function App() {
         <Route path="/" element={<Layout />} />
         <Route path="/terms" element={<><Navbar /><Terms /><Footer /></>} />
         <Route path="/policy" element={<><Navbar /><Policy /><Footer /></>} />
+        <Route path="/order-success" element={<OrderSuccess />} />
       </Routes>
     </BrowserRouter>
   );
