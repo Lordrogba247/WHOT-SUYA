@@ -43,7 +43,7 @@ const Order = () => {
         };
 
         try {
-            const response = await fetch("https://www.whotfoods.ca/api/orders", {
+            const response = await fetch("/api/orders", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
