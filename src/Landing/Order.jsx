@@ -356,7 +356,7 @@ import React, { useState } from "react";
 import "./Order.css";
 
 const UNIT_PRICE = 15.00;
-const DELIVERY_FEE = 5.99;
+const DELIVERY_FEE = 5.00;
 const BULK_THRESHOLD = 20;
 const BULK_PRICE = 13.00;
 
