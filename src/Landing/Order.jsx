@@ -406,6 +406,7 @@ const Order = () => {
 
             if (response.ok) {
                 const data = await response.json();
+                console.log("Response data:", data);
                 window.location.href = data.url;
                 setQty(1);
                 setForm({ fullName: "", email: "", phone: "", address: "" });
