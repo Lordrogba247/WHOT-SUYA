@@ -230,8 +230,8 @@ const Order = () => {
                 setForm({ fullName: "", email: "", phone: "", address: "" });
             } else {
                 const errorData = await response.json().catch(() => null);
-                const message = errorData?.message || errorData?.error || "Something went wrong.";
-                alert(`❌ Order failed (${response.status}): ${message}`);
+                // const message = errorData?.message || errorData?.error || "Something went wrong.";
+                alert("❌ Error, please try again.");
             }
         } catch (error) {
             console.error("Checkout error:", error);
