@@ -173,7 +173,7 @@ const Contact = () => {
 
                         <div className="contact-block">
                             <p className="contact-block-title">Follow us:</p>
-                            <a href="https://www.instagram.com/whotrestaurantlounge/?hl=en" target="_blank" rel="noopener noreferrer" className="social-link" className="contact-link">
+                            <a href="https://www.instagram.com/whotfoods/?hl=en" target="_blank" rel="noopener noreferrer" className="social-link" className="contact-link">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 256 256">
                                     <g fill="none">
                                         <rect width="256" height="256" fill="url(#SVGWRUqebek)" rx="60" />
