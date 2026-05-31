@@ -109,7 +109,7 @@ export default function Terms() {
                 </ul>
                 <p className="terms-para">
                     To request assistance, customers should contact us promptly at{" "}
-                    <a href="mailto:info@whotfoods.ca" className="terms-link">info@whotfoods.ca</a>{" "}
+                    <a href="mailto:whotfoodsinc@gmail.com" className="terms-link">whotfoodsinc@gmail.com</a>{" "}
                     or{" "}
                     <a href="tel:+19052660331" className="terms-link">+1 905-266-0331</a>.
                     Approved refunds will be processed through the original payment method.
@@ -215,7 +215,7 @@ export default function Terms() {
                 </p>
                 <p className="terms-para">
                     Email:{" "}
-                    <a href="mailto:info@whotfoods.ca" className="terms-link">info@whotfoods.ca</a>
+                    <a href="mailto:whotfoodsinc@gmail.com" className="terms-link">whotfoodsinc@gmail.com</a>
                 </p>
 
             </div>

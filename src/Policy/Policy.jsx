@@ -156,7 +156,7 @@ export default function Policy() {
                 </ul>
                 <p className="policy-para">
                     Requests may be submitted to{" "}
-                    <a href="mailto:info@whotfoods.ca" className="policy-link">info@whotfoods.ca</a>.
+                    <a href="mailto:whotfoodsinc@gmail.com" className="policy-link">whotfoodsinc@gmail.com</a>.
                 </p>
 
                 {/* 8 */}
@@ -205,7 +205,7 @@ export default function Policy() {
                 </p>
                 <p className="policy-para">
                     Email:{" "}
-                    <a href="mailto:info@whotfoods.ca" className="policy-link">info@whotfoods.ca</a>
+                    <a href="mailto:whotfoodsinc@gmail.com" className="policy-link">whotfoodsinc@gmail.com</a>
                 </p>
 
             </div>
