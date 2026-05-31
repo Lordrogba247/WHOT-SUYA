@@ -6,7 +6,7 @@ const steps = [
     {
         num: "1",
         title: "Thaw",
-        desc: "Unbox the beef suya gentle into a bowl or plate to thaw",
+        desc: "Unbox the beef suya into a bowl or plate to thaw",
     },
     {
         num: "2",
