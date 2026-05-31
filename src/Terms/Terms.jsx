@@ -23,7 +23,7 @@ export default function Terms() {
                 <h2 className="terms-section-title">1. Company Information</h2>
                 <p className="terms-para">
                     WHOT FOODS; A Product of Whot Restaurant & Lounge. 7694 Islington Ave, Woodbridge,
-                    Ontario L4L 1W3, Canada. &nbsp; Phone: +1 905-266-0331 &nbsp; Email: info@whotfoods.ca
+                    Ontario L4L 1W3, Canada. &nbsp; Phone: +1 905-266-0331 &nbsp; Email: whotfoodsinc@gmail.com
                 </p>
 
                 {/* 2 */}
