@@ -174,7 +174,7 @@ const Order = () => {
                     </div>
 
                     <div className="bulk-badge bulk-badge--desktop">
-                        <p>For Every {BULK_THRESHOLD} unit orders enjoy</p>
+                        <p>For Every orders ({BULK_THRESHOLD} units and above) enjoy wholesale price of</p>
                         <p className="bulk-price">${BULK_PRICE} Per Unit</p>
                     </div>
 
