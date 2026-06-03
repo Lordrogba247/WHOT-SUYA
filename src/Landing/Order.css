@@ -226,6 +226,11 @@
 }
 
 /* ── Shipping notice ── */
+.delivery {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
 .shipping-notice {
   font-size: 0.78rem;
   color: var(--gray);
