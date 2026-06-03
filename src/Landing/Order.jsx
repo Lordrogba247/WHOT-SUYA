@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./Order.css";
 
 const UNIT_PRICE = 15.00;
-const DELIVERY_FEE = 5.00;
 const BULK_THRESHOLD = 20;
 const BULK_PRICE = 13.00;
 
@@ -17,7 +16,7 @@ const Order = () => {
     });
 
     const unitPrice = qty >= BULK_THRESHOLD ? BULK_PRICE : UNIT_PRICE;
-    const total = unitPrice * qty + DELIVERY_FEE;
+    const total = unitPrice * qty;
 
     const handleFormChange = (e) => {
         setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -52,11 +51,10 @@ const Order = () => {
         const orderData = {
             fullName: form.fullName,
             email: form.email,
-            phoneNumber: digitsOnly,       // send digits only to satisfy backend
+            phoneNumber: digitsOnly,
             deliveryAddress: form.address.trim(),
-            quantity: Number(qty),          // ensure it's a number, not a string
+            quantity: Number(qty),
             itemPrice: unitPrice,
-            deliveryFee: DELIVERY_FEE,
             totalAmount: total,
         };
 
@@ -180,10 +178,9 @@ const Order = () => {
 
                     <div className="order-summary">
                         <div className="summary-rows">
-                            <div className="summary-row">
-                                <span>Delivery Fee</span>
-                                <span>CAD$ {DELIVERY_FEE.toFixed(2)}</span>
-                            </div>
+                            <p className="shipping-notice">
+                                Please note upon confirmation of order, you'll be contacted with details of the shipping fee
+                            </p>
                             <div className="summary-row total-row">
                                 <span>Total Order</span>
                                 <span className="total-amount">CAD$ {total.toFixed(2)}</span>

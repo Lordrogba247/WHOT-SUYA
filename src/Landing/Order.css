@@ -225,6 +225,16 @@
   color: var(--black);
 }
 
+/* ── Shipping notice ── */
+.shipping-notice {
+  font-size: 0.78rem;
+  color: var(--gray);
+  line-height: 1.5;
+  margin: 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #ccc;
+}
+
 .btn-checkout {
   background: var(--red);
   color: var(--white);
