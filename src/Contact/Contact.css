@@ -139,6 +139,7 @@
   /* max-width: 420px; */
   display: flex;
   justify-content: space-evenly;
+  font-family: "Poppins", sans-serif;
 }
 
 /* On desktop, show the tag inside contact-right via a pseudo element */
@@ -163,6 +164,9 @@
   color: var(--red);
   margin-bottom: 6px;
   text-align: center;
+}
+.contact-block-text:hover {
+  color: var(--red);
 }
 
 .contact-block-text {
@@ -226,8 +230,8 @@
 
 .submit-message.success {
   background-color: rgba(205, 40, 39, 0.2);
-  border: 1px solid #CD2827;
-  color: #CD2827;
+  border: 1px solid #cd2827;
+  color: #cd2827;
 }
 
 .submit-message.error {
